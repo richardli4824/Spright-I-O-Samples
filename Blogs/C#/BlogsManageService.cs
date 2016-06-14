@@ -5,14 +5,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data;
 using System.Data.SqlClient;
-using Sabio.Data;
-using Sabio.Web.Models.Requests;
-using Sabio.Web.Models.ViewModels;
-using Sabio.Web.Services.Interfaces;
-using Sabio.Web.Models.Requests.EVA;
-using Sabio.Web.Domain;
+using Spright.Data;
+using Spright.Web.Models.Requests;
+using Spright.Web.Models.ViewModels;
+using Spright.Web.Services.Interfaces;
+using Spright.Web.Models.Requests.EVA;
+using Spright.Web.Domain;
 
-namespace Sabio.Web.Services
+namespace Spright.Web.Services
 {
     public class BlogsManageService : BaseService, IBlogsManageService
     {
