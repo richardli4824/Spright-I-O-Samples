@@ -1,0 +1,12 @@
+﻿<br />
+<div class="widget-title" ng-controller="adminBlogsTabController as blogMain">
+    <h2>Blog Manager<a ng-href="#/blog/{{blogMain.websiteId}}" id="indexBtn" class="btn btn-outline btn-black pull-right">Go To Index</a></h2>
+
+    <br />
+
+    <ul class="nav nav-tabs">
+        <li ng-class="blogMain.tabClass(tab)" ng-repeat="tab in blogMain.tabs">
+            <a href="{{tab.link}}" ng-click="blogMain.setSelectedTab(tab)">{{tab.label}}</a>
+        </li>
+    </ul>
+</div>

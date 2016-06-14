@@ -1,0 +1,70 @@
+﻿<div ng-include="'/Scripts/sabio/application/websites/templates/tabs.html'"></div>
+<div ng-include="'/Scripts/sabio/application/adminblogs/templates/adminblogs.tabs.html'"></div>
+<br />
+<style>
+    .border {
+        border: solid 5px red;
+    }
+</style>
+<div class="panel-body" id="mediaCtlr">
+    <div class="page-content container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="widget">
+                    <div class="widget-heading">
+                        <div class="widget-title"><h3>Blog Images</h3></div>
+                    </div>
+                    <div class="widget-body">
+
+                        <div class="tab-content">
+
+                            <div id="home" role="tabpanel" aria-labelledby="home-tab" aria-expanded="true" class="tab-pane fade active in">
+
+                                <div class="container-fluid">
+                                    <div class="col-md-12">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <p>Upload your blog images below:</p>
+
+                                                <div class="dropzone"
+                                                     method="post"
+                                                     enctype="multipart/form-data"
+                                                     ng-dropzone
+                                                     dropzone="aBMedia.dropzone"
+                                                     dropzone-config="aBMedia.dzConfig"
+                                                     event-handlers="{
+                                                 'addedfile': aBMedia.dzAddedFile,
+                                                 'error': aBMedia.dzError,
+                                                 'sending': aBMedia.dzOnSending,
+                                                 'success': aBMedia.dzOnSuccess,
+                                                 }">
+
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div ng-repeat="data in aBMedia.blogMedia" ng-init="img={}">
+
+                                                    <br />
+                                                    <img id="blogMedia" ng-src="{{data.fullUrl}}"
+                                                         class="img-rounded img-responsive"
+                                                         ng-class="{'border':data.isCoverPhoto===true}"
+                                                         width="150" height="150">
+                                                    <br />
+                                                    <button type="button" class="btn btn btn-secondary"
+                                                            ng-click="aBMedia.setMain(data.id)"
+                                                            ng-hide="data.isCoverPhoto">
+                                                        Set As Cover Photo
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

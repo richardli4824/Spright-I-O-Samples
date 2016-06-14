@@ -1,0 +1,83 @@
+﻿<div ng-include="'/Scripts/sabio/application/websites/templates/tabs.html'"></div>
+<div ng-include="'/Scripts/sabio/application/adminblogs/templates/adminblogs.tabs.html'"></div>
+<br />
+<div class="col-md-7">
+    <br />
+    <div class="widget">
+        <div class="widget-heading">
+            <div class="widget-title"><h3>Blog Content Editing</h3></div>
+        </div>
+        <div class="widget-body">
+            <form id="blogForm" role="form" name="aBContent.blogForm" ng-submit="aBContent.addBlog()" novalidate>
+                <div class="form-group">
+                    <label for="title">Title</label>
+                    <input id="title" type="text" name="title" ng-model="aBContent.blog.title" class="form-control" ng-class="{'error' : dashboard.showNewBlogErrors && !dashboard.blogForm.title.$valid}" required ng-minlength="2" ng-blur="aBContent.slugCat(aBContent.blog.title)">
+                    <div role="alert" class="help-inline error" style="color:red;">
+                        <span class="error" ng-show="aBContent.showNewBlogErrors && aBContent.blogForm.title.$error.required">Title is required</span>
+                        <span class="error" ng-show="aBContent.showNewBlogErrors && aBContent.blogForm.title.$error.minlength">Too short! Title must be at least 2 characters</span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="slug">Slug</label>
+                    <input id="slugField" type="text" name="slug" class="form-control text-muted" ng-model="aBContent.blog.slug" readonly>
+                </div>
+
+                <div class="form-group">
+                    <label style="color:orangered;font-size:20px;">
+                        Is Featured:
+                        <input type="checkbox" name="IsFeatured" ng-model="aBContent.blog.isFeatured">
+                    </label><br />
+                    <tt>Is Featured = {{checkboxModel.value2}}</tt><br />
+                </div>
+                <div>
+                    <label for="publishDate">Publish Date</label>
+                    <pre>Selected date is: <em>{{aBContent.blog.publishDate | date:'fullDate' }}</em></pre>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <p class="input-group">
+                                <input type="text" class="form-control" id="publishDate" name="publishDate" ng-class="{'error' : dashboard.showNewBlogErrors && !dashboard.blogForm.publishDate.$valid}" uib-datepicker-popup="{{aBContent.format}}" ng-model="aBContent.blog.publishDate" is-open="aBContent.popup1.opened" datepicker-options="aBContent.dateOptions" ng-required="true" close-text="Close" alt-input-formats="aBContent.altInputFormats" />
+                                <span class="input-group-btn">
+                                    <button type="button" class="btn btn-default" ng-click="aBContent.open1()"><i class="glyphicon glyphicon-calendar"></i></button>
+                                </span>
+                                <div role="alert" class="help-inline error" style="color:red;">
+                                    <span class="error" ng-show="aBContent.showNewBlogErrors && aBContent.blogForm.publishDate.$error.required">Publish Date is required</span>
+                                    <span class="error" ng-show="aBContent.showNewBlogErrors && aBContent.blogForm.publishDate.$error.minlength">Too short! Publish Date must be at least 2 characters</span>
+                                </div>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <br />
+                <div class="form-group">
+                    <label for="userId">User ID</label>
+                    <input id="userId" type="text" name="userId" ng-model="aBContent.blog.userId" class="form-control" ng-class="{'error' : dashboard.showNewBlogErrors && !dashboard.blogForm.userId.$valid}" required ng-minlength="2" />
+                    <div role="alert" class="help-inline error" style="color:red;">
+                        <span class="error" ng-show="aBContent.showNewBlogErrors && aBContent.blogForm.userId.$error.required">User Id is required</span>
+                        <span class="error" ng-show="aBContent.showNewBlogErrors && aBContent.blogForm.userId.$error.minlength">Too short! UserId must be at least 2 characters</span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="pageContent">Page Content</label>
+                    <div text-angular
+                         ng-model="aBContent.blog.pageContent"
+                         id="pageContent"
+                         text-angular-name="textAngular"
+                         name="pageContent"
+                         ng-class="{'error' : dashboard.showNewBlogErrors && !dashboard.blogForm.pageContent.$valid}"
+                         required
+                         ng-minlength="10"></div>
+                    <div role="alert" class="help-inline error" style="color:red;">
+                        <span class="error" ng-show="aBContent.showNewBlogErrors && aBContent.blogForm.pageContent.$error.required">Page Content is required</span>
+                        <span class="error" ng-show="aBContent.showNewBlogErrors && aBContent.blogForm.pageContent.$error.minlength">Too short! Page Content must be at least 10 characters</span>
+                    </div>
+                </div>
+                <div class="text-right">
+                    <button type="submit" id="pubSub" class="btn btn-outline btn-success">Publish</button>
+                    <button type="reset" class="btn btn-outline btn-primary">Reset Form</button>
+                </div>
+                <div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
