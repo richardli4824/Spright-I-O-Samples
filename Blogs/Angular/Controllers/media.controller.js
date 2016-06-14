@@ -82,19 +82,20 @@
             }
             vm.$mediaUploaderService.postBlogMedia(vm.blogMediaPayload, vm.onPostBlogMediaSuccess, vm.OnAnyError)
         };
-
         function _onPostBlogMediaSuccess(object) {
             _loadBlogMedia();
         }
-
         function _loadBlogMedia() {
             vm.$mediaUploaderService.getBlogMedia(vm.adminBlogId, vm.onGetMediabyBlogIdSuccess)
         }
 
         function _onGetMediabyBlogIdSuccess(data) {
             vm.notify(function () {
+
                 vm.blogMedia = data.items;
+
             });
+
         }
 
         function _OnAnySuccess(response) {
@@ -123,6 +124,7 @@
             }
 
             vm.$mediaUploaderService.CoverPhoto(vm.setMainPayload, vm.setMainOnSuccess, vm.OnAnyError);
+
         }
 
         function _setMainOnSuccess() {

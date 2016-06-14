@@ -98,11 +98,11 @@
         function _GetBlogSuccess(data) {
             vm.notify(function () {
                 vm.blog = data.item;
+
             });
         };
 
         function _onGetBlogError(jqXhr, error) {
-            console.error(error);
             vm.$alertService.error();
         };
 
@@ -130,6 +130,7 @@
         function _checkboxModel() {
             value1: true
             value2: true
+
         };
     }
 })();
