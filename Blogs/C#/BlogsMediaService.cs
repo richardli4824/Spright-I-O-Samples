@@ -2,13 +2,13 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using Sabio.Web.Models.Requests;
+using Spright.Web.Models.Requests;
 using System.Data.SqlClient;
 using System.Data;
-using Sabio.Data;
-using Sabio.Web.Services.Interfaces;
+using Spright.Data;
+using Spright.Web.Services.Interfaces;
 
-namespace Sabio.Web.Services
+namespace Spright.Web.Services
 {
     public class BlogsMediaService : BaseService, IBlogsMediaService
     {
