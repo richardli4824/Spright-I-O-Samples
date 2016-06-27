@@ -1,2 +1,2 @@
 # Spright-I-O-Samples
-Sample code from Spright I/O project demonstrating the EAV feature I worked on
+Sample code from Spright I/O project demonstrating the EAV feature I worked on. Specifically created a CRUD system for blogs so users or administrators can create, read, update, and delete blogs conveniently. Some additional features within the blog system include being able to upload images and set cover photos, while also being able to use a datepicker for selecting the date of publish. Integrated the blog system into the EAV model so that it can be applied to other possible websites and entities. 
