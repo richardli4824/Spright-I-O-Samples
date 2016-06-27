@@ -1,6 +1,7 @@
 ﻿if (!sabio.services.blogs)
     sabio.services.blogs = {}
 
+// Ajax Call to Create and Insert a Blog
 sabio.services.blogs.insertBlog = function (payLoad, onSuccess, onError) {
     $.ajax({
         type: 'POST',
