@@ -13,6 +13,7 @@ sabio.services.blogs.insertBlog = function (payLoad, onSuccess, onError) {
     });
 };
 
+// Ajax Call to Update a Blog By Id
 sabio.services.blogs.updateBlog = function (payLoad, blogsId, onSuccess, onError) {
     $.ajax({
         type: 'PUT',
@@ -24,6 +25,7 @@ sabio.services.blogs.updateBlog = function (payLoad, blogsId, onSuccess, onError
     });
 };
 
+// Ajax Call to Retrive All Blogs
 sabio.services.blogs.blogslistJson = function (onSuccess, onError) {
     $.ajax({
         type: 'GET',
@@ -34,6 +36,7 @@ sabio.services.blogs.blogslistJson = function (onSuccess, onError) {
     });
 };
 
+// Ajax Call to Retrieve A Blog By Id
 sabio.services.blogs.getBlogById = function (blogsId, onSuccess, onError) {
     $.ajax({
         type: 'GET',
@@ -44,6 +47,7 @@ sabio.services.blogs.getBlogById = function (blogsId, onSuccess, onError) {
     });
 };
 
+// Ajax Call to Delete a Blog
 sabio.services.blogs.deleteBlogsById = function (blogsId, onSuccess, onError) {
     $.ajax({
         type: 'DELETE',
@@ -53,6 +57,7 @@ sabio.services.blogs.deleteBlogsById = function (blogsId, onSuccess, onError) {
     });
 };
 
+// Ajax Call to Retrieve all the Blogs Specific to the Website
 sabio.services.blogs.listBlogsByWebsiteId = function (websiteId, payload, onSuccess, onError) {
     $.ajax({
         type: 'GET',
