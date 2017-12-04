@@ -1,8 +1,8 @@
-﻿if (!sabio.services.blogs)
-    sabio.services.blogs = {}
+﻿if (!spright.services.blogs)
+    spright.services.blogs = {}
 
 // Ajax Call to Create and Insert a Blog
-sabio.services.blogs.insertBlog = function (payLoad, onSuccess, onError) {
+spright.services.blogs.insertBlog = function (payLoad, onSuccess, onError) {
     $.ajax({
         type: 'POST',
         url: '/api/Admin/Blogs',
@@ -14,7 +14,7 @@ sabio.services.blogs.insertBlog = function (payLoad, onSuccess, onError) {
 };
 
 // Ajax Call to Update a Blog By Id
-sabio.services.blogs.updateBlog = function (payLoad, blogsId, onSuccess, onError) {
+spright.services.blogs.updateBlog = function (payLoad, blogsId, onSuccess, onError) {
     $.ajax({
         type: 'PUT',
         url: '/api/Admin/Blogs/' + blogsId,
@@ -26,7 +26,7 @@ sabio.services.blogs.updateBlog = function (payLoad, blogsId, onSuccess, onError
 };
 
 // Ajax Call to Retrive All Blogs
-sabio.services.blogs.blogslistJson = function (onSuccess, onError) {
+spright.services.blogs.blogslistJson = function (onSuccess, onError) {
     $.ajax({
         type: 'GET',
         url: '/api/Admin/Blogs',
@@ -37,7 +37,7 @@ sabio.services.blogs.blogslistJson = function (onSuccess, onError) {
 };
 
 // Ajax Call to Retrieve A Blog By Id
-sabio.services.blogs.getBlogById = function (blogsId, onSuccess, onError) {
+spright.services.blogs.getBlogById = function (blogsId, onSuccess, onError) {
     $.ajax({
         type: 'GET',
         url: '/api/Admin/Blogs/' + blogsId,
@@ -48,7 +48,7 @@ sabio.services.blogs.getBlogById = function (blogsId, onSuccess, onError) {
 };
 
 // Ajax Call to Delete a Blog
-sabio.services.blogs.deleteBlogsById = function (blogsId, onSuccess, onError) {
+spright.services.blogs.deleteBlogsById = function (blogsId, onSuccess, onError) {
     $.ajax({
         type: 'DELETE',
         url: '/api/Admin/Blogs/' + blogsId,
@@ -58,7 +58,7 @@ sabio.services.blogs.deleteBlogsById = function (blogsId, onSuccess, onError) {
 };
 
 // Ajax Call to Retrieve all the Blogs Specific to the Website
-sabio.services.blogs.listBlogsByWebsiteId = function (websiteId, payload, onSuccess, onError) {
+spright.services.blogs.listBlogsByWebsiteId = function (websiteId, payload, onSuccess, onError) {
     $.ajax({
         type: 'GET',
         url: '/api/Admin/Blogs/website/' + websiteId,
